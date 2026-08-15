@@ -1,9 +1,9 @@
 /*
     =========================================================
-    lightmind.css  —  山林氛围的 Typora 主题
+    lightmind.css  —  山林氛围的 Typora 主题（代码块浅色版）
     正文  : 霞骛文楷 (LXGW WenKai)
     代码  : JetBrains Mono
-    基调  : 米黄纸面 · 山林森林绿点缀 · 深海军蓝代码块
+    基调  : 米黄纸面 · 山林森林绿点缀 · 浅米色代码块
     =========================================================
 */
 
@@ -44,27 +44,27 @@
     --select-text-bg-color: rgba(74, 124, 89, 0.28);
     --primary-color: var(--accent);
 
-    /* 代码块底色（取自 JetBrains 截图的深海军蓝）*/
-    --code-bg: #1e2330;
-    --code-bg-soft: #262c3a;
-    --code-fg: #c8cfd9;
-    --code-line: #3a4253;
-    --code-gutter: #6b7488;
+    /* ========== 代码块 —— 浅色米纸风格 ========== */
+    --code-bg: #f4f1e8; /* 与页面底色一致，浑然一体 */
+    --code-bg-soft: #e9e4d6; /* 代码块标题栏（稍深一点的米色）*/
+    --code-fg: #2c3a32; /* 深森林绿文字 */
+    --code-line: #d5cfc0; /* 浅沙色边框 / 分隔线 */
+    --code-gutter: #8a9a8a; /* 行号颜色（柔和灰绿）*/
 
-    /* 语法配色（参考 One Dark 调色板）*/
-    --cm-keyword: #d55fde; /* public / void / if / return 关键字 */
-    --cm-type: #e5c07b; /* 类型名（如 DialogueManager） */
-    --cm-string: #89ca78;
-    --cm-number: #d19a66;
-    --cm-comment: #77b767;
-    --cm-variable: #ef596f;
-    --cm-def: #61afef; /* 函数名 */
-    --cm-property: #ef596f;
-    --cm-operator: #c8cfd9;
-    --cm-bracket: #7dba8b;
-    --cm-meta: #e5c07b;
-    --cm-tag: #d55fde;
-    --cm-attr: #2bbac5;
+    /* 语法配色 —— One Light 风格，适配浅色底 */
+    --cm-keyword: #a626a4; /* 关键字（紫）*/
+    --cm-type: #986801; /* 类型名（深金）*/
+    --cm-string: #50a14f; /* 字符串（绿）*/
+    --cm-number: #986801; /* 数字（橙金）*/
+    --cm-comment: #8e9e8e; /* 注释（灰绿）*/
+    --cm-variable: #e45649; /* 变量（柔红）*/
+    --cm-def: #4078f2; /* 函数名（蓝）*/
+    --cm-property: #c18401; /* 属性（深橙）*/
+    --cm-operator: #383a42; /* 运算符（深灰）*/
+    --cm-bracket: #50a14f; /* 括号（绿）*/
+    --cm-meta: #986801; /* 元（金）*/
+    --cm-tag: #a626a4; /* 标签（紫）*/
+    --cm-attr: #0184bc; /* 属性名（青蓝）*/
 
     /* 效果 */
     --radius-sm: 4px;
@@ -78,7 +78,7 @@
 
     /* 字体栈（不依赖外部资源，纯本地回退链）*/
     --font-body:
-        "LXGW WenKai", "LXGW WenKai Screen", "霞鹜文楷", "Noto Serif CJK SC",
+        "霞鹜文楷", "LXGW WenKai", "LXGW WenKai Screen", "Noto Serif CJK SC",
         "Source Han Serif CN", "PingFang SC", "Microsoft YaHei", system-ui,
         serif;
     --font-mono:
@@ -86,7 +86,7 @@
         "SF Mono", Consolas, "Courier New", "LXGW WenKai", "LXGW WenKai Screen",
         "霞鹜文楷", "Noto Serif CJK SC", "PingFang SC", monospace;
     --font-heading:
-        "LXGW WenKai", "LXGW WenKai Screen", "霞鹜文楷", "Noto Serif CJK SC",
+        "霞鹜文楷", "LXGW WenKai", "LXGW WenKai Screen", "Noto Serif CJK SC",
         "PingFang SC", system-ui, serif;
 }
 
@@ -338,8 +338,7 @@ footer {
     font-family: var(--font-mono);
 }
 
-/* 源码模式中的围栏代码块 ``` ... ``` — 加深海军蓝条带，
-   与渲染视图同色，语法配色用 JetBrains 风格 */
+/* 源码模式中的围栏代码块 ``` ... ``` — 浅色米纸风格 */
 #typora-source .CodeMirror .CodeMirror-line .cm-formatting-code-block,
 #typora-source .CodeMirror .HyperMD-codeblock,
 #typora-source .CodeMirror .HyperMD-codeblock-begin,
@@ -363,7 +362,7 @@ footer {
     padding-bottom: 4px;
 }
 
-/* 围栏区内的关键字 / 字符串 / 数字 — 与渲染视图同色 */
+/* 围栏区内的关键字 / 字符串 / 数字 — 与渲染视图同色（浅色版语法）*/
 #typora-source .CodeMirror .HyperMD-codeblock .cm-keyword,
 #typora-source .CodeMirror .cm-fenced-code-block .cm-keyword {
     color: var(--cm-keyword) !important;
@@ -572,13 +571,13 @@ footer {
     color: var(--accent);
 }
 
-/* ---------- 代码块 (.md-fences / pre) ---------- */
+/* ---------- 代码块 (.md-fences / pre) —— 浅色 ---------- */
 /* 只针对最外层 — 切勿命中每行 .CodeMirror-line（它也是 <pre>）*/
 #write pre:not(.CodeMirror-line):not(.md-meta-block),
 #write .md-fences,
 .md-fences {
     font-family: var(--font-mono);
-    font-size: 18px;
+    font-size: 14.5px; /* 比正文 18px 稍小，阅读更舒适 */
     line-height: 1.62;
     background: var(--code-bg);
     color: var(--code-fg);
@@ -612,7 +611,7 @@ footer {
     background: var(--code-bg) !important;
     color: var(--code-fg);
     font-family: var(--font-mono);
-    font-size: 18px;
+    font-size: 14.5px;
     line-height: 1.62;
 }
 

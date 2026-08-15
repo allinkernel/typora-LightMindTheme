@@ -600,7 +600,7 @@ footer {
 #write .md-fences,
 .md-fences {
     font-family: var(--font-mono);
-    font-size: 18px;
+    font-size: 14.5px; /* 调整：比正文 18px 稍小 */
     line-height: 1.62;
     background: var(--code-bg);
     color: var(--code-fg);
@@ -634,7 +634,7 @@ footer {
     background: var(--code-bg) !important;
     color: var(--code-fg);
     font-family: var(--font-mono);
-    font-size: 18px;
+    font-size: 14.5px; /* 调整：与上文统一 */
     line-height: 1.62;
 }
 
