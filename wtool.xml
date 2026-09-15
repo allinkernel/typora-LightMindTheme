@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  lightmind —— Typora 的一个自制主题。
+
+  **只可发布，不可安装。**
+
+  Typora 的主题是用户自己在软件里选的，没有"装到 $HOME"这回事，
+  所以这里没有 <link> / <env>。参与 wtool 的方式是"能被发布"：
+  从发布页下下来就是一个完整的工作区。
+
+  表格里它会显示成 install 不支持、publish 可执行 —— 那是准确的。
+-->
+<wtool schema="1" id="lightmind" priority="100">
+  <publish kind="source"/>
+</wtool>
